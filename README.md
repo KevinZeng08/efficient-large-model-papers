@@ -14,6 +14,7 @@
 [The CAP Principle for LLM Serving: A Survey of Long-Context Large Language Model Serving](https://arxiv.org/pdf/2405.11299)||Long Context||
 
 ## Offloading
-|Paper|Code|Category|Abstract
-|--|--|--|--|
-[[2303.06865] FlexGen: High-Throughput Generative Inference of Large Language Models with a Single GPU (arxiv.org)](https://arxiv.org/abs/2303.06865)|https://github.com/FMInference/FlexiGen||latency-insensitive tasks with batch processing. overcome inefficiency in offloading with GPU,CPU,Disk. consider what to offload, where to offload in memory hierarchy, when to offload during inference|
+|Paper|Code|Scenario|Challenge|Method|Category|
+|--|--|--|--|--|--|
+[[2303.06865] FlexGen: High-Throughput Generative Inference of Large Language Models with a Single GPU (arxiv.org)](https://arxiv.org/abs/2303.06865)|https://github.com/FMInference/FlexiGen|latency-insensitive tasks with batch processing|inefficiency in offloading with GPU,CPU,Disk. what to offload, where to offload in memory hierarchy, when to offload during inference|inference as computational graph. cost model by profiling IO and compute, with variables of tensor placements -> linear-programming model||
+[[2408.07092] Post-Training Sparse Attention with Double Sparsity (arxiv.org)](https://arxiv.org/abs/2408.07092)|https://github.com/andy-yang-1/DoubleSparse|post-training sparse attention|retrieval accuracy(whether to retain full KV Cache), hardware-friendly(continuous memory access), memory usage(manage offloading with full KV Cache)|two level algorithm: static channel sparsity + dynamic token sparsity. engineering: compact label cache, prefetching token based on embedding similarities 
